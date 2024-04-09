@@ -21,13 +21,24 @@ $(function () {
       $guide.eq($idx).siblings().addClass('hide');
     });
   });
-
+  // ------------------------- common ------------------------
+  Splitting();
+  document.querySelector('.fade-anim') && fadeAnims();
+  document.querySelector('.fade-in') && fadeItems();
+  // document.querySelector('.counter') && countingAnim();
+  // 새로고침시 페이지 상단으로 이동
+  // window.onload = function () {
+  //   setTimeout(function () {
+  //     scrollTo(0, 0);
+  //   }, 100);
+  // };
   // ---------------------------- main page --------------------------------
   if (document.querySelector('.main-page')) {
+    showMainNews();
+    countingAnim();
     mvSlide();
     mainAbout();
     productAnims();
-    showMainNews();
     mainTab();
     mainWithSlide();
     infiniteCarousel({
@@ -51,17 +62,7 @@ $(function () {
   headerAnim();
   // ------------------------- footer ------------------------
 
-  // ------------------------- common ------------------------
-  Splitting();
-  document.querySelector('.fade-anim') && fadeAnims();
-  document.querySelector('.fade-in') && fadeItems();
-  document.querySelector('.counter') && countingAnim();
-  // 새로고침시 페이지 상단으로 이동
-  // window.onload = function () {
-  //   setTimeout(function () {
-  //     scrollTo(0, 0);
-  //   }, 100);
-  // };
+  
   //  ----------------------- functions ----------------------------
   function mvSlide() {
     $('.main-mv__slide').slick({
